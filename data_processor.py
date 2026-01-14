@@ -24,20 +24,31 @@ def clean_salary_strings(salary_str):
         salary_str.replace(",", "").replace("to", "-").replace("$", "").replace(" ", "")
     )
 
-    if "-" in text:
-        parts = text.split("-")
-        if len(parts) == 2:
+    try:
+        if "-" in text:
+            parts = text.split("-")
+            if len(parts) == 2:
+                try:
+                    value["salary_min"] = int(parts[0])
+                    value["salary_max"] = int(parts[1])
+                except ValueError:
+                    return value
+        else:
             try:
-                value["salary_min"] = int(parts[0])
-                value["salary_max"] = int(parts[1])
+                value["salary_min"] = int(text)
+                value["salary_max"] = int(text)
             except ValueError:
                 return value
-    else:
-        try:
-            value["salary_min"] = int(text)
-            value["salary_max"] = int(text)
-        except ValueError:
-            return value
+
+            if value["salary_min"] is not None:
+                value["salary_type"] = (
+                    "yearly" if value["salary_min"] > 1000 else "hourly"
+                )
+
+    except ValueError:
+        pass
+
+    return value
 
 
 def validate_job(job):
@@ -58,14 +69,18 @@ def process_jobs(jobs):
 
     cleaned_jobs = remove_duplicates(jobs)
 
-    # Handles the new values of salary
-    def format_salary(job):
-        salary_values = clean_salary_strings(job.get("salary"))
+    processed_jobs = []
 
-        job["salary_type"] = salary_values["salary_type"]
-        job["salary_min"] = salary_values["salary_min"]
-        job["salary_max"] = salary_values["salary_max"]
+    for job in cleaned_jobs:
+        if not validate_job(job):
+            continue
 
-        return job
+        salary_infos = clean_salary_strings(job.get("salary"))
 
-    return [format_salary(job) for job in cleaned_jobs if validate_job(job)]
+        job["salary_type"] = salary_infos["salary_type"]
+        job["salary_min"] = salary_infos["salary_min"]
+        job["salary_max"] = salary_infos["salary_max"]
+
+        processed_jobs.append(job)
+
+    return processed_jobs
