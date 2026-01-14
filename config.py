@@ -1,7 +1,7 @@
 import os
 
 # Indeed Configuration
-INDEED_BASE_URL = "https://www.indeed.com/jobs"
+INDEED_BASE_URL = "http://www.indeed.com/jobs"
 
 
 # CSV Column Names
