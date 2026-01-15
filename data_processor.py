@@ -77,9 +77,9 @@ def process_jobs(jobs):
 
         salary_infos = clean_salary_strings(job.get("salary"))
 
-        job["salary_type"] = salary_infos["salary_type"]
-        job["salary_min"] = salary_infos["salary_min"]
         job["salary_max"] = salary_infos["salary_max"]
+        job["salary_min"] = salary_infos["salary_min"]
+        job["salary_type"] = salary_infos["salary_type"]
 
         processed_jobs.append(job)
 
