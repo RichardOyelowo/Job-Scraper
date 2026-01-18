@@ -8,7 +8,7 @@ import time
 import sys
 from pathlib import Path
 sys.path.append(str(Path(__file__).parent.parent))
-from config import INDEED_BASE_URL, user_agent_generator
+from config import INDEED_BASE_URL
 
 
 class IndeedScraper:
