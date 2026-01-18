@@ -1,10 +1,14 @@
-from config import INDEED_BASE_URL, user_agent_generator
 from playwright.sync_api import sync_playwright
 from urllib.parse import urlencode
 from datetime import datetime
 from bs4 import BeautifulSoup
 import requests
 import time
+
+import sys
+from pathlib import Path
+sys.path.append(str(Path(__file__).parent.parent))
+from config import INDEED_BASE_URL, user_agent_generator
 
 
 class IndeedScraper:
