@@ -18,6 +18,28 @@ _Python script that scrapes job listings from multiple websites, extracts struct
 
 </div>
 
+```
+Enter job title (e.g., 'Python Developer', 'Software Engineer'): Python Developer
+Enter location (e.g., 'Georgia', 'Atlanta, GA', 'Remote'): Georgia
+Enter salary (e.g., '100000'): $80000
+Jobs posted within last X days (1, 3, 7, 14 or press Enter for all): 7
+Enter job type (e.g., 'Full', 'Part' 'Contract', 'Temporary', 'Internship'): full
+Enter experience level (e.g., 'Mid', 'Entry', 'Senior'): entry
+How many job listings do you want?(e.g. '10', '20'): 30
+
+🔍 Starting scraper...
+Scraping Jobs...
+✅ Found 32 raw jobs
+
+🧹 Processing data...
+✅ After cleaning: 28 valid jobs
+
+💾 Exporting to CSV...
+✅ Saved to: output/jobs_20260112_143022.csv
+
+🎉 Done! Check the output folder for your CSV file.
+```
+
 ## ✨ Features
 
 - 🖥️ **Interactive CLI** - User-friendly command-line interface for search customization
@@ -80,25 +102,14 @@ python scraper.py
 Follow the interactive prompts:
 
 ```
-Enter job title (e.g., 'Python Developer', 'Software Engineer'): Python Developer
-Enter location (e.g., 'Georgia', 'Atlanta, GA', 'Remote'): Georgia
-Enter salary (e.g., '100000'): $80000
-Jobs posted within last X days (1, 3, 7, 14 or press Enter for all): 7
-Enter job type (e.g., 'Full', 'Part' 'Contract', 'Temporary', 'Internship'): full
-Enter experience level (e.g., 'Mid', 'Entry', 'Senior'): entry
-How many job listings do you want?(e.g. '10', '20'): 30
+Enter job title (e.g., 'Python Developer', 'Software Engineer'): 
+Enter location (e.g., 'Georgia', 'Atlanta, GA', 'Remote'): 
+Enter salary (e.g., '100000'): $
+Jobs posted within last X days (1, 3, 7, 14 or press Enter for all): 
+Enter job type (e.g., 'Full', 'Part' 'Contract', 'Temporary', 'Internship'): 
+Enter experience level (e.g., 'Mid', 'Entry', 'Senior'): 
+How many job listings do you want?(e.g. '10', '20'):
 
-🔍 Starting scraper...
-Scraping Jobs...
-✅ Found 32 raw jobs
-
-🧹 Processing data...
-✅ After cleaning: 28 valid jobs
-
-💾 Exporting to CSV...
-✅ Saved to: output/jobs_20260112_143022.csv
-
-🎉 Done! Check the output folder for your CSV file.
 ```
 
 ## 📋 Output Format
