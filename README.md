@@ -4,7 +4,8 @@
 
 ### 🤖 Automated Indeed Job Search Tool
 
-_An intelligent web scraping solution that streamlines your job search by collecting and organizing listings into structured CSV files_
+_Python script that scrapes job listings from multiple websites, extracts structured data, and outputs it in CSV format. Demonstrates web scraping, data processing, and automation with Python._
+
 
 [![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 ![Platform](https://img.shields.io/badge/platform-Windows%20%7C%20macOS%20%7C%20Linux-lightgrey.svg)
