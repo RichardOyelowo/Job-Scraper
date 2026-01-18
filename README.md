@@ -6,6 +6,9 @@
 
 _An intelligent web scraping solution that streamlines your job search by collecting and organizing listings into structured CSV files_
 
+Python script that scrapes job listings from multiple websites, extracts structured data, and outputs it in CSV format. Demonstrates web scraping, data processing, and automation with Python.
+
+
 [![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 ![Platform](https://img.shields.io/badge/platform-Windows%20%7C%20macOS%20%7C%20Linux-lightgrey.svg)
 [![Python](https://img.shields.io/badge/Python-3.x-blue.svg)](https://www.python.org/)
